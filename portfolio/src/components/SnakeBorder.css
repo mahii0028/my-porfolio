@@ -1,0 +1,76 @@
+.snake-border {
+  position: relative;
+  border-radius: 0.5rem; /* match rounded-lg */
+  overflow: hidden;
+}
+
+.snake-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: limegreen;
+  animation: snake-path 4s linear infinite;
+}
+
+@keyframes snake-path {
+  0% {
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+  }
+
+  25% {
+    top: 0;
+    left: 0;
+    width: 100%; /* move right */
+    height: 3px;
+  }
+
+  26% {
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 3px;
+    height: 0;
+  }
+
+  50% {
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%; /* move down */
+  }
+
+  51% {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+  }
+
+  75% {
+    bottom: 0;
+    right: 0;
+    width: 100%; /* move left */
+    height: 3px;
+  }
+
+  76% {
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 100%; /* move up */
+  }
+}
